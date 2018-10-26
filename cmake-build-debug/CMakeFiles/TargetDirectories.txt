@@ -1,0 +1,3 @@
+/home/jeza/桌面/tiny_plus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jeza/桌面/tiny_plus/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jeza/桌面/tiny_plus/cmake-build-debug/CMakeFiles/tiny_lus.dir
