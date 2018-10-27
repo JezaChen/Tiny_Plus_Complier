@@ -8,18 +8,22 @@
 #include <string>
 
 /**
+ * =====================↓下面是词法错误=========================
  * ALPHA_AFTER_NUMBER_ERROR 字母紧接数字错误
  * ASSIGN_LEXICAL_ERROR 赋值符号没有打全错误
  * SINGLE_QUOTES_MISSING_FOR_STRING_ERROR 字符串缺失单引号错误
  * LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR 注释左大括号缺失错误
  * RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR 注释右大括号缺失错误
+ * ILLEGAL_CHARACTER非法字符
+ * ======================↑上面是词法错误=======================
  * **/
 enum LEXICAL_ERROR_CODE {
     ALPHA_AFTER_NUMBRR_ERROR = 0,
     ASSIGN_LEXICAL_ERROR,
     SINGLE_QUOTES_MISSING_FOR_STRING_ERROR,
     LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR,
-    RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR
+    RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR,
+    ILLEGAL_CHARCTER
 };
 
 struct {
@@ -45,6 +49,10 @@ struct {
         {
                 RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR,
                 "注释中右大括号丢失"
+        },
+        {
+                ILLEGAL_CHARCTER,
+                "遇见非法字符: "
         }
 };
 

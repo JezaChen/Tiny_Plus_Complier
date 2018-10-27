@@ -170,6 +170,13 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                         case ';':
                             currToken = TK_SEMICOLON;
                             break;
+                        default:
+                            /**FIXME 遇到非法字符**/
+                            state = FAILED;
+                            currToken = ERROR;
+                            tokenString = error_items[ILLEGAL_CHARCTER].error_description + c;
+                            /**设置不保存，避免tokenString被覆盖**/
+                            isNeedToSave = false;
                     }
                 }
                 break;

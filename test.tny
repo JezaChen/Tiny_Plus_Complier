@@ -13,3 +13,4 @@ miss left single quotation mark'
 'miss right single quotation mark
 miss left curly bracket}
 {miss right curly bracket
+int i = 0
