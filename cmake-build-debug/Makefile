@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/tiny_lus.dir/build.make CMakeFiles/tiny_lus.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+parser.o: parser.cpp.o
+
+.PHONY : parser.o
+
+# target to build an object file
+parser.cpp.o:
+	$(MAKE) -f CMakeFiles/tiny_lus.dir/build.make CMakeFiles/tiny_lus.dir/parser.cpp.o
+.PHONY : parser.cpp.o
+
+parser.i: parser.cpp.i
+
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.cpp.i:
+	$(MAKE) -f CMakeFiles/tiny_lus.dir/build.make CMakeFiles/tiny_lus.dir/parser.cpp.i
+.PHONY : parser.cpp.i
+
+parser.s: parser.cpp.s
+
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.cpp.s:
+	$(MAKE) -f CMakeFiles/tiny_lus.dir/build.make CMakeFiles/tiny_lus.dir/parser.cpp.s
+.PHONY : parser.cpp.s
+
 scan2.o: scan2.cpp.o
 
 .PHONY : scan2.o
@@ -216,6 +243,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
 	@echo "... scan2.o"
 	@echo "... scan2.i"
 	@echo "... scan2.s"

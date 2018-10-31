@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tiny_lus.dir/main.cpp.o"
   "CMakeFiles/tiny_lus.dir/scan2.cpp.o"
   "CMakeFiles/tiny_lus.dir/util.cpp.o"
+  "CMakeFiles/tiny_lus.dir/parser.cpp.o"
   "tiny_lus.pdb"
   "tiny_lus"
 )

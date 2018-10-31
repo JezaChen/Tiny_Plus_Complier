@@ -1,6 +1,12 @@
-//
-// Created by Administrator on 2018/10/26.
-//
+/*************************************************************************************************************
+ * Lexical Analyzer for TINY++
+ * Initial Version Created by J. Chen, Z. Mu in Nov 26, 2018
+ * TINY++ Lexical Grammar
+ * 1. Keywords must be begin with letters.
+ * 2. Characters cannot be contained in numbers.
+ * 3. The comment is enclosed by brackets, and cannot be nested, but it can include more than one line.
+ * 4. The string is enclosed by single quote.
+ ************************************************************************************************************/
 
 #include "globals.h"
 #include "util.h"
@@ -9,6 +15,7 @@
 #include <string>
 #include <iostream>
 #include <utility>
+#include <stack>
 
 /***
  * @enum STATE
@@ -44,7 +51,7 @@ static char getNextChar() {
 /**
  * 回退指针
  * */
-static void ungetNextChar(void) {
+static void ungetNextChar() {
     if (!EOF_flag)
         linepos--;
 }
@@ -91,6 +98,9 @@ static TokenType reversedLookUp(const std::string &s) {
     return ID;
 }
 
+
+static int brace_num_nested = 0;
+
 /***
  * @brief 获取TOKEN函数，词法分析的核心算法
  * @param ret_lineno out 用于返回值，token对应的行号
@@ -102,7 +112,11 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
     std::string tokenString;
     bool is_unget; //是否已经出现了回滚操作
 
-    STATE state = START; //一开始处于START状态
+    /**
+     * 一开始处于START状态
+     * @update 如果大括号栈中还有东西，应让它处于注释状态（错误处理）
+     * **/
+    STATE state = (brace_num_nested == 0 ? START : INCOMMENT);
 
     while (state != SUCCESS && state != FAILED) { //如果仍不处于终态
         char c = getNextChar();
@@ -122,6 +136,13 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                 } else if (c == '{') {
                     isNeedToSave = false;
                     state = INCOMMENT;
+                } else if (c == '}') {
+                    //FIXME-1:ERROR
+                    isNeedToSave = false;
+                    state = FAILED;
+                    currToken = ERROR;
+                    tokenString = error_items[LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR].error_description;
+                    /**不回滚，吃掉右大括号，继续分析**/
                 } else if (c == '<') {
                     state = INLEQ;
                 } else if (c == '>') {
@@ -163,20 +184,42 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                         case ';':
                             currToken = TK_SEMICOLON;
                             break;
+                        default:
+                            /**FIXME 遇到非法字符**/
+                            state = FAILED;
+                            currToken = ERROR;
+                            tokenString = error_items[ILLEGAL_CHARCTER].error_description + c;
+                            /**设置不保存，避免tokenString被覆盖**/
+                            isNeedToSave = false;
                     }
                 }
                 break;
-            /**注释状态**/
+                /**注释状态**/
             case INCOMMENT:
                 isNeedToSave = false;
                 if (c == EOF) {
-                    state = SUCCESS; //TODO 不知道是什么恶心的语法，先打上去再输，给钱就优化
-                    currToken = ENDFILE;
+                    /*state = SUCCESS; //TODO 不知道是什么恶心的语法，先打上去再输，给钱就优化
+                    currToken = ENDFILE;*/
+                    //FIXME 如果读到文本终止符，意味着这个文本并没有存在右大括号符，此时应该及时返回并把终止符吐回去
+                    state = FAILED;
+                    currToken = ERROR;
+                    tokenString = error_items[RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR].error_description;
+                    ungetNextChar();
                 } else if (c == '}') {
+                    if (!brace_num_nested) {
+
+                    }
                     state = START;
+                } else if (c == '{') {
+                    /**FIXME 如果在注释状态下再读到左大括号，意味着出现了嵌套，需要进一步处理**/
+                    brace_num_nested++;
+                    state = FAILED;
+                    currToken = ERROR;
+                    tokenString = error_items[COMMENTS_NESTED_ERROR].error_description;
+                    /**不用回滚**/
                 }
                 break;
-            /**数字状态**/
+                /**数字状态**/
             case INNUM:
                 if (isalpha(c)) { //当数字紧接字母的时候，是错误的
                     ungetNextChar();
@@ -193,7 +236,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     is_unget = true;
                 }
                 break;
-            /**标识符状态**/
+                /**标识符状态**/
             case INID:
                 if (!isdigit(c) && !isalpha(c)) {
                     state = SUCCESS;
@@ -202,7 +245,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     is_unget = true;
                 }
                 break;
-            /**赋值符号状态**/
+                /**赋值符号状态**/
             case INASSIGN:
                 if (c == '=') {
                     state = SUCCESS;
@@ -217,7 +260,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     tokenString = error_items[1].error_description;
                 }
                 break;
-            /**小于等于符号状态**/
+                /**小于等于符号状态**/
             case INLEQ:
                 state = SUCCESS;
                 if (c == '=') {
@@ -226,7 +269,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     currToken = TK_LSS;
                 }
                 break;
-            /**大于等于符号状态**/
+                /**大于等于符号状态**/
             case INGEQ:
                 state = SUCCESS;
                 if (c == '=') {
@@ -235,7 +278,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     currToken = TK_GTR;
                 }
                 break;
-            /**字符串状态**/
+                /**字符串状态**/
             case INSTR:
                 if (c == '\'') {
                     state = SUCCESS;
@@ -246,6 +289,9 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     currToken = ERROR;
                     tokenString = error_items[2].error_description;
                 }
+            case SUCCESS:
+            case FAILED:
+                break;
         }
         if (isNeedToSave && !is_unget) { //回滚后的状态不需要将读取到的字符拼接到结果字符串之后
             tokenString += c;
@@ -259,7 +305,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
         }
         return std::make_pair(currToken, tokenString);
     } else {
-        std::cerr << "Error!" << std::endl;
+        //std::cerr << "Error!" << std::endl;
         return std::make_pair(ERROR, tokenString);
     }
 }

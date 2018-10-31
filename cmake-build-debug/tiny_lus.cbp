@@ -93,6 +93,12 @@
 		<Unit filename="/home/jeza/桌面/tiny_plus/main.cpp">
 			<Option target="tiny_lus"/>
 		</Unit>
+		<Unit filename="/home/jeza/桌面/tiny_plus/parser.cpp">
+			<Option target="tiny_lus"/>
+		</Unit>
+		<Unit filename="/home/jeza/桌面/tiny_plus/parser.h">
+			<Option target="tiny_lus"/>
+		</Unit>
 		<Unit filename="/home/jeza/桌面/tiny_plus/scan.h">
 			<Option target="tiny_lus"/>
 		</Unit>

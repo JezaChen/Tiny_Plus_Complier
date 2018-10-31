@@ -1,5 +1,6 @@
 #include "globals.h"
 #include "util.h"
+#include "errors.h"
 
 void printToken(TokenType token, const char *tokenString, const int &lineno) {
 
@@ -81,4 +82,9 @@ void printToken(TokenType token, const char *tokenString, const int &lineno) {
         default:
             fprintf(listing, "Unknown token: %d\n", token);
     }
+}
+
+void printError(const int &error_code, const int &lineno, char *error_details) {
+    fprintf(listing, "\033[1;;31mAn Error is detected at line %d: %s %s \033[0m\n", lineno, error_items[error_code],
+            error_details);
 }
