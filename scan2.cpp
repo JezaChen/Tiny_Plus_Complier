@@ -1,6 +1,12 @@
-//
-// Created by Administrator on 2018/10/26.
-//
+/*************************************************************************************************************
+ * Lexical Analyzer for TINY++
+ * Initial Version Created by J. Chen, Z. Mu in Nov 26, 2018
+ * TINY++ Lexical Grammar
+ * 1. Keywords must be begin with letters.
+ * 2. Characters cannot be contained in numbers.
+ * 3. The comment is enclosed by brackets, and cannot be nested, but it can include more than one line.
+ * 4. The string is enclosed by single quote.
+ ************************************************************************************************************/
 
 #include "globals.h"
 #include "util.h"
@@ -9,6 +15,7 @@
 #include <string>
 #include <iostream>
 #include <utility>
+#include <stack>
 
 /***
  * @enum STATE
@@ -44,7 +51,7 @@ static char getNextChar() {
 /**
  * 回退指针
  * */
-static void ungetNextChar(void) {
+static void ungetNextChar() {
     if (!EOF_flag)
         linepos--;
 }
@@ -91,6 +98,9 @@ static TokenType reversedLookUp(const std::string &s) {
     return ID;
 }
 
+
+static int brace_num_nested = 0;
+
 /***
  * @brief 获取TOKEN函数，词法分析的核心算法
  * @param ret_lineno out 用于返回值，token对应的行号
@@ -102,7 +112,11 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
     std::string tokenString;
     bool is_unget; //是否已经出现了回滚操作
 
-    STATE state = START; //一开始处于START状态
+    /**
+     * 一开始处于START状态
+     * @update 如果大括号栈中还有东西，应让它处于注释状态（错误处理）
+     * **/
+    STATE state = (brace_num_nested == 0 ? START : INCOMMENT);
 
     while (state != SUCCESS && state != FAILED) { //如果仍不处于终态
         char c = getNextChar();
@@ -192,7 +206,17 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     tokenString = error_items[RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR].error_description;
                     ungetNextChar();
                 } else if (c == '}') {
+                    if (!brace_num_nested) {
+
+                    }
                     state = START;
+                } else if (c == '{') {
+                    /**FIXME 如果在注释状态下再读到左大括号，意味着出现了嵌套，需要进一步处理**/
+                    brace_num_nested++;
+                    state = FAILED;
+                    currToken = ERROR;
+                    tokenString = error_items[COMMENTS_NESTED_ERROR].error_description;
+                    /**不用回滚**/
                 }
                 break;
                 /**数字状态**/
@@ -265,6 +289,9 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     currToken = ERROR;
                     tokenString = error_items[2].error_description;
                 }
+            case SUCCESS:
+            case FAILED:
+                break;
         }
         if (isNeedToSave && !is_unget) { //回滚后的状态不需要将读取到的字符拼接到结果字符串之后
             tokenString += c;

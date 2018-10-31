@@ -13,5 +13,7 @@
  */
 void printToken( TokenType, const char* , const int&);
 
+void printError(const int &error_code, const int& lineno, char *error_details = nullptr);
+
 
 #endif
