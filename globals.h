@@ -75,8 +75,10 @@ class TreeNode {
 public:
     TreeNode *child[MAXCHILDREN];
     TreeNode *sibling;
+    TreeNode *parent;
     int lineno;
     NodeKind nodeKind;
+    int childrenNum;
     /* union {
          StmtKind stmt;
          ExpKind exp;
@@ -87,9 +89,17 @@ public:
         char *name;
     } attr;
 
-    TreeNode(const int &lineno) : sibling(nullptr), lineno(lineno) {
+    TreeNode(const int &lineno) : sibling(nullptr), lineno(lineno), childrenNum(0) {
         for (auto &i : child)
             i = nullptr;
+    }
+
+    void appendChild(TreeNode *node) {
+        if (childrenNum == MAXCHILDREN - 1) {
+            //todo
+            std::cerr << "APPEND CHILDREN ERROR: REACH MAXIMUM" << std::endl;
+        }
+        child[childrenNum++] = node;
     }
 };
 
@@ -97,7 +107,7 @@ class StmtNode : public TreeNode {
 public:
     StmtKind kind;
 
-    StmtNode(const StmtKind &kind, const int &lineno) : TreeNode(lineno), kind(kind) {}
+    StmtNode(const StmtKind &kind, const int &lineno) : TreeNode(lineno), kind(kind), nodeKind(StmtK) {}
 
     static StmtNode *create_Stmt_Node(const StmtKind &kind, const int &lineno) {
         auto *node = new StmtNode(kind, lineno);
@@ -110,7 +120,7 @@ public:
     ExpKind kind;
     ExpType type;
 
-    ExpNode(const ExpKind &kind, const int &lineno) : TreeNode(lineno), kind(kind), type(Void) {}
+    ExpNode(const ExpKind &kind, const int &lineno) : TreeNode(lineno), kind(kind), type(Void), nodeKind(ExpK) {}
 
     static ExpNode *create_Exp_Node(const ExpKind &kind, const int &lineno) {
         auto *node = new ExpNode(kind, lineno);

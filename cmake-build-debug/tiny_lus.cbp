@@ -8,110 +8,108 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/jeza/桌面/tiny_plus/cmake-build-debug"/>
+				<Option working_dir="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/jeza/桌面/tiny_plus/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/jeza/桌面/tiny_plus/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="tiny_lus">
-				<Option output="/home/jeza/桌面/tiny_plus/cmake-build-debug/tiny_lus" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jeza/桌面/tiny_plus/cmake-build-debug"/>
+				<Option output="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/tiny_lus.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 tiny_lus"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 tiny_lus"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="tiny_lus/fast">
-				<Option output="/home/jeza/桌面/tiny_plus/cmake-build-debug/tiny_lus" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jeza/桌面/tiny_plus/cmake-build-debug"/>
+				<Option output="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/tiny_lus.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 tiny_lus/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jeza/桌面/tiny_plus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 tiny_lus/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="G:/TINY++/Tiny_Plus_Complier/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jeza/桌面/tiny_plus/errors.h">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/errors.h">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/globals.h">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/globals.h">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/main.cpp">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/main.cpp">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/parser.cpp">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/parser.cpp">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/parser.h">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/parser.h">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/scan.h">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/scan.h">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/scan2.cpp">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/scan2.cpp">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/util.cpp">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/util.cpp">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/util.h">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/util.h">
 			<Option target="tiny_lus"/>
 		</Unit>
-		<Unit filename="/home/jeza/桌面/tiny_plus/CMakeLists.txt">
+		<Unit filename="G:/TINY++/Tiny_Plus_Complier/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
