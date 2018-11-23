@@ -1,0 +1,35 @@
+1) read x
+2) Label L1
+3) if x<10 goto L2
+4) goto L3
+5) Label L2
+6) if x>5 goto L4
+7) goto L3
+8) Label L3
+9) if x<9 goto L4
+10) goto L5
+11) Label L4
+12) fact:=4
+13) goto L6
+14) Label L5
+15) fact:=6
+16) Label L6
+17) Label L7
+18) t0:=A*2
+19) A:=t0
+20) t1:=A+C
+21) t2:=B+D
+22) Label L8
+23) if t1<t2 goto L9
+24) goto L7
+25) Label L9
+26) t3:=B+C
+27) t4:=A+t3
+28) Label L10
+29) if t4<10 goto L10
+30) goto L12
+31) Label L11
+32) t5:=B+3
+33) B:=t5
+34) goto L10
+35) Label L12

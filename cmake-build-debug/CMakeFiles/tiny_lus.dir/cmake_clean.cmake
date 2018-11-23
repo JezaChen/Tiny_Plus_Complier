@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tiny_lus.dir/scan2.cpp.obj"
   "CMakeFiles/tiny_lus.dir/util.cpp.obj"
   "CMakeFiles/tiny_lus.dir/parser.cpp.obj"
+  "CMakeFiles/tiny_lus.dir/cgen.cpp.obj"
   "tiny_lus.pdb"
   "tiny_lus.exe"
   "tiny_lus.exe.manifest"

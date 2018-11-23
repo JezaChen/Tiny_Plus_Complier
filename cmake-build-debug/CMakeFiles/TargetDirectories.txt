@@ -1,3 +1,3 @@
-G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/CMakeFiles/tiny_lus.dir
-G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/CMakeFiles/edit_cache.dir
-G:/TINY++/Tiny_Plus_Complier/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/jeza1/Desktop/tiny_plus/cmake-build-debug/CMakeFiles/tiny_lus.dir
+C:/Users/jeza1/Desktop/tiny_plus/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/jeza1/Desktop/tiny_plus/cmake-build-debug/CMakeFiles/rebuild_cache.dir

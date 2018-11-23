@@ -8,22 +8,31 @@
 #include <string>
 
 /**
- * =====================â†“ä¸‹é¢æ˜¯è¯æ³•é”™è¯¯=========================
- * ALPHA_AFTER_NUMBER_ERROR å­—æ¯ç´§æŽ¥æ•°å­—é”™è¯¯
- * ASSIGN_LEXICAL_ERROR èµ‹å€¼ç¬¦å·æ²¡æœ‰æ‰“å…¨é”™è¯¯
- * SINGLE_QUOTES_MISSING_FOR_STRING_ERROR å­—ç¬¦ä¸²ç¼ºå¤±å•å¼•å·é”™è¯¯
- * LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR æ³¨é‡Šå·¦å¤§æ‹¬å·ç¼ºå¤±é”™è¯¯
- * RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR æ³¨é‡Šå³å¤§æ‹¬å·ç¼ºå¤±é”™è¯¯
- * ILLEGAL_CHARACTERéžæ³•å­—ç¬¦
- * COMMENTS_NESTED_ERROR æ³¨é‡Šä¸­å‡ºçŽ°åµŒå¥—é”™è¯¯
- * ======================â†‘ä¸Šé¢æ˜¯è¯æ³•é”™è¯¯========================
- * ======================â†“ä¸‹é¢æ˜¯è¯­æ³•é”™è¯¯========================
- * SYNTAX_ERROR è¯­æ³•é”™è¯¯
- * ======================â†‘ä¸Šé¢æ˜¯è¯­æ³•é”™è¯¯========================
+ * =====================¡ýÏÂÃæÊÇ´Ê·¨´íÎó=========================
+ * ALPHA_AFTER_NUMBER_ERROR ×ÖÄ¸½ô½ÓÊý×Ö´íÎó
+ * ASSIGN_LEXICAL_ERROR ¸³Öµ·ûºÅÃ»ÓÐ´òÈ«´íÎó
+ * SINGLE_QUOTES_MISSING_FOR_STRING_ERROR ×Ö·û´®È±Ê§µ¥ÒýºÅ´íÎó
+ * LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR ×¢ÊÍ×ó´óÀ¨ºÅÈ±Ê§´íÎó
+ * RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR ×¢ÊÍÓÒ´óÀ¨ºÅÈ±Ê§´íÎó
+ * ILLEGAL_CHARACTER·Ç·¨×Ö·û
+ * COMMENTS_NESTED_ERROR ×¢ÊÍÖÐ³öÏÖÇ¶Ì×´íÎó
+ * ======================¡üÉÏÃæÊÇ´Ê·¨´íÎó========================
+ * ======================¡ýÏÂÃæÊÇÓï·¨´íÎó========================
+ * SYNTAX_ERROR Óï·¨´íÎó
+ * ======================¡üÉÏÃæÊÇÓï·¨´íÎó========================
+ * ======================¡ýÏÂÃæÊÇÓïÒå´íÎó========================
+ * SEMANTIC_COND_BOOL_ERROR Ìõ¼þÅÐ¶ÏÓï¾ä±ØÐëÊÇBOOLÀàÐÍ
+ * SEMANTIC_UNDEFINED_IDENTIFIER Î´¶¨ÒåµÄ±äÁ¿
+ * SEMANTIC_OPERATION_BETWEEN_DIFFERENT_TYPES ·ûºÅÓÃÓÚ²»Í¬µÄÊý¾ÝÀàÐÍÖ®¼ä
+ * SEMANTIC_TYPE_CANNOT_BE_OPERATED ¸ÃÀàÐÍ²»ÄÜÓÃÓÚ¸ÃÔËËã·û
+ * SEMANTIC_CANNOT_ASSIGN_DIFFERENT_TYPE ²»ÄÜ¸³Óè²»Í¬ÀàÐÍµÄÖµ
+ * SEMANTIC_ILLEGAL_CHARACTER ÓïÒå·ÖÎöÖÐÓöµ½µÄ·Ç·¨×Ö·û
+ * SEMANTIC_MISSING_SEMICOLON È±ÉÙÄ©Î²µÄË«ÒýºÅ
+ * SEMANTIC_MULTIPLE_DECLARATIONS ¶à´ÎÉùÃ÷
  * **/
 enum ERROR_CODE {
-    /**è¯æ³•é”™è¯¯**/
-    ALPHA_AFTER_NUMBRR_ERROR = 0,
+    /**´Ê·¨´íÎó**/
+            ALPHA_AFTER_NUMBRR_ERROR = 0,
     ASSIGN_LEXICAL_ERROR,
     SINGLE_QUOTES_MISSING_FOR_STRING_ERROR,
     LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR,
@@ -31,45 +40,87 @@ enum ERROR_CODE {
     ILLEGAL_CHARCTER,
     COMMENTS_NESTED_ERROR,
 
-    /**è¯­æ³•é”™è¯¯**/
-    SYNTAX_ERROR
+    /**Óï·¨´íÎó**/
+    SYNTAX_ERROR,
+
+    /**ÓïÒå¼ì²é´íÎó**/
+    SEMANTIC_COND_BOOL_ERROR,
+    SEMANTIC_UNDEFINED_IDENTIFIER,
+    SEMANTIC_OPERATION_BETWEEN_DIFFERENT_TYPES,
+    SEMANTIC_TYPE_CANNOT_BE_OPERATED,
+    SEMANTIC_CANNOT_ASSIGN_DIFFERENT_TYPE,
+    SEMANTIC_ILLEGAL_CHARACTER,
+    SEMANTIC_MISSING_SEMICOLON,
+    SEMANTIC_MULTIPLE_DECLARATIONS
 };
 
 struct {
     ERROR_CODE error_code;
     std::string error_description;
-} error_items[8] = {
+} error_items[17] = {
         {
                 ALPHA_AFTER_NUMBRR_ERROR,
-                "æ•°å­—åŽé¢ä¸èƒ½åŠ å­—æ¯! å¬æ‡‚äº†æ²¡æœ‰!"
+                "Numbers cannot be followed by letters."
         },
         {
                 ASSIGN_LEXICAL_ERROR,
-                "è¿™ä¸–ç•Œä¸Šæ€»æœ‰äººèµ‹å€¼ç¬¦å·ä¸æ‰“å…¨, åŽæ¥ä»–ä»¬éƒ½çœ‹åˆ°è‡ªå·±çš„è„‘æµ†äº†!"
+                "The assignment symbols are not complete."
         },
         {
                 SINGLE_QUOTES_MISSING_FOR_STRING_ERROR,
-                "è¿™ä¸–ç•Œä¸Šå¥½äººä¸ä¼šæ­»åäººä¸ä¼šæ­», åªæœ‰å†™å­—ç¬¦ä¸²ä¸åŠ å•å¼•å·çš„äººä¼šæ­»!"
+                "String Constant Single Quotation Mark Not Completed."
         },
         {
                 LEFT_BRACE_MISSING_FOR_COMMENTS_ERROR,
-                "æ³¨é‡Šä¸­å·¦å¤§æ‹¬å·ç¼ºå¤±"
+                "The left brace is missing"
         },
         {
                 RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR,
-                "æ³¨é‡Šä¸­å³å¤§æ‹¬å·ä¸¢å¤±"
+                "The right brace is missing"
         },
         {
                 ILLEGAL_CHARCTER,
-                "é‡è§éžæ³•å­—ç¬¦: "
+                "Meet An Illegal Character"
         },
         {
                 COMMENTS_NESTED_ERROR,
-                "æ³¨é‡Šä¸­å‡ºçŽ°åµŒå¥—"
+                "An nested comment is found."
         },
         {
                 SYNTAX_ERROR,
-                "å‡ºçŽ°äº†è¯­æ³•é”™è¯¯: "
+                "An Syntax Error is found: "
+        },
+        {
+                SEMANTIC_COND_BOOL_ERROR,
+                "The value of expression must be boolean"
+        },
+        {
+                SEMANTIC_UNDEFINED_IDENTIFIER,
+                "Undefined Identifier"
+        },
+        {
+                SEMANTIC_OPERATION_BETWEEN_DIFFERENT_TYPES,
+                "This operator can not be used between two different types."
+        },
+        {
+                SEMANTIC_TYPE_CANNOT_BE_OPERATED,
+                "This type cannot be operated by this operator."
+        },
+        {
+                SEMANTIC_CANNOT_ASSIGN_DIFFERENT_TYPE,
+                "Cannot Assign different type"
+        },
+        {
+                SEMANTIC_ILLEGAL_CHARACTER,
+                "Meet an illegal character when doing semantic analyzing."
+        },
+        {
+                SEMANTIC_MISSING_SEMICOLON,
+                "A single quotation mark is missing at the end of sentence."
+        },
+        {
+                SEMANTIC_MULTIPLE_DECLARATIONS,
+                "Cannot declare the same identifier again!"
         }
 };
 

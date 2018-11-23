@@ -2,6 +2,7 @@
 #include "util.h"
 #include "errors.h"
 
+//bool has_error;
 void printToken(TokenType token, const char *tokenString, const int &lineno) {
 
     switch (token) {
@@ -85,6 +86,15 @@ void printToken(TokenType token, const char *tokenString, const int &lineno) {
 }
 
 void printError(const int &error_code, const int &lineno, char *error_details) {
-    fprintf(listing, "\033[1;;31mAn Error is detected at line %d: %s %s \033[0m\n", lineno, error_items[error_code],
-            error_details);
+    if (listing == stdout) //输出到控制台可以带有颜色
+        fprintf(listing, "\033[1;;31mAn Error is detected at line %d: %s \033[0m\n", lineno,
+                error_items[error_code].error_description.c_str());
+    else
+        fprintf(listing, "An Error is detected at line %d: %s\n", lineno,
+                error_items[error_code].error_description.c_str());
+
+    if (error_code != SEMANTIC_MISSING_SEMICOLON) //如果报的错是严重错误，就不生成中间代码文件了
+        has_error = true;
 }
+
+

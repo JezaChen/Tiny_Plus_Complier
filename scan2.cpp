@@ -36,7 +36,7 @@ static bool EOF_flag = FALSE;
 static char getNextChar() {
     if (linepos >= bufSize) {
         if (fgets(lineBuf, BUFLEN - 1, source)) {
-            lineno++; //FIXME 漏洞代码-SB001-解决了最后一行报错飘了的问题
+            lineno++; //漏洞代码-SB001-解决了最后一行报错飘了的问题
             bufSize = strlen(lineBuf);
             linepos = 0;
             return lineBuf[linepos++];
@@ -206,10 +206,11 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     tokenString = error_items[RIGHT_BRACE_MISSING_FOR_COMMENTS_ERROR].error_description;
                     ungetNextChar();
                 } else if (c == '}') {
-                    if (!brace_num_nested) {
+                    if (brace_num_nested>=1) {
 
                     }
                     state = START;
+                    brace_num_nested = 0;
                 } else if (c == '{') {
                     /**FIXME 如果在注释状态下再读到左大括号，意味着出现了嵌套，需要进一步处理**/
                     brace_num_nested++;
@@ -240,7 +241,7 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
             case INID:
                 if (!isdigit(c) && !isalpha(c)) {
                     state = SUCCESS;
-                    currToken = ID; //FIXME
+                    currToken = ID;
                     ungetNextChar();
                     is_unget = true;
                 }
@@ -267,6 +268,9 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     currToken = TK_LEQ;
                 } else {
                     currToken = TK_LSS;
+                    //FIXED BUG 记得回滚
+                    ungetNextChar();
+                    is_unget = true;
                 }
                 break;
                 /**大于等于符号状态**/
@@ -276,6 +280,9 @@ std::pair<TokenType, std::string> getToken(int &ret_lineno) {
                     currToken = TK_GEQ;
                 } else {
                     currToken = TK_GTR;
+                    //FIXED BUG 记得回滚
+                    ungetNextChar();
+                    is_unget = true;
                 }
                 break;
                 /**字符串状态**/

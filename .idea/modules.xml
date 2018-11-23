@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Tiny_Plus_Complier.iml" filepath="$PROJECT_DIR$/.idea/Tiny_Plus_Complier.iml" />
       <module fileurl="file://$PROJECT_DIR$/../tiny_plus/.idea/tiny_lus.iml" filepath="$PROJECT_DIR$/../tiny_plus/.idea/tiny_lus.iml" />
     </modules>
   </component>

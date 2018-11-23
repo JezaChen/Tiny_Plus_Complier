@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = G:\TINY++\Tiny_Plus_Complier
+CMAKE_SOURCE_DIR = C:\Users\jeza1\Desktop\tiny_plus
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = G:\TINY++\Tiny_Plus_Complier\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tiny_lus.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/tiny_lus.dir/flags.make
 
 CMakeFiles/tiny_lus.dir/main.cpp.obj: CMakeFiles/tiny_lus.dir/flags.make
 CMakeFiles/tiny_lus.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\TINY++\Tiny_Plus_Complier\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tiny_lus.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\main.cpp.obj -c G:\TINY++\Tiny_Plus_Complier\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tiny_lus.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\main.cpp.obj -c C:\Users\jeza1\Desktop\tiny_plus\main.cpp
 
 CMakeFiles/tiny_lus.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tiny_lus.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\TINY++\Tiny_Plus_Complier\main.cpp > CMakeFiles\tiny_lus.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jeza1\Desktop\tiny_plus\main.cpp > CMakeFiles\tiny_lus.dir\main.cpp.i
 
 CMakeFiles/tiny_lus.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tiny_lus.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\TINY++\Tiny_Plus_Complier\main.cpp -o CMakeFiles\tiny_lus.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jeza1\Desktop\tiny_plus\main.cpp -o CMakeFiles\tiny_lus.dir\main.cpp.s
 
 CMakeFiles/tiny_lus.dir/main.cpp.obj.requires:
 
@@ -82,16 +82,16 @@ CMakeFiles/tiny_lus.dir/main.cpp.obj.provides.build: CMakeFiles/tiny_lus.dir/mai
 
 CMakeFiles/tiny_lus.dir/scan2.cpp.obj: CMakeFiles/tiny_lus.dir/flags.make
 CMakeFiles/tiny_lus.dir/scan2.cpp.obj: ../scan2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\TINY++\Tiny_Plus_Complier\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tiny_lus.dir/scan2.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\scan2.cpp.obj -c G:\TINY++\Tiny_Plus_Complier\scan2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tiny_lus.dir/scan2.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\scan2.cpp.obj -c C:\Users\jeza1\Desktop\tiny_plus\scan2.cpp
 
 CMakeFiles/tiny_lus.dir/scan2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tiny_lus.dir/scan2.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\TINY++\Tiny_Plus_Complier\scan2.cpp > CMakeFiles\tiny_lus.dir\scan2.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jeza1\Desktop\tiny_plus\scan2.cpp > CMakeFiles\tiny_lus.dir\scan2.cpp.i
 
 CMakeFiles/tiny_lus.dir/scan2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tiny_lus.dir/scan2.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\TINY++\Tiny_Plus_Complier\scan2.cpp -o CMakeFiles\tiny_lus.dir\scan2.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jeza1\Desktop\tiny_plus\scan2.cpp -o CMakeFiles\tiny_lus.dir\scan2.cpp.s
 
 CMakeFiles/tiny_lus.dir/scan2.cpp.obj.requires:
 
@@ -106,16 +106,16 @@ CMakeFiles/tiny_lus.dir/scan2.cpp.obj.provides.build: CMakeFiles/tiny_lus.dir/sc
 
 CMakeFiles/tiny_lus.dir/util.cpp.obj: CMakeFiles/tiny_lus.dir/flags.make
 CMakeFiles/tiny_lus.dir/util.cpp.obj: ../util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\TINY++\Tiny_Plus_Complier\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tiny_lus.dir/util.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\util.cpp.obj -c G:\TINY++\Tiny_Plus_Complier\util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tiny_lus.dir/util.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\util.cpp.obj -c C:\Users\jeza1\Desktop\tiny_plus\util.cpp
 
 CMakeFiles/tiny_lus.dir/util.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tiny_lus.dir/util.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\TINY++\Tiny_Plus_Complier\util.cpp > CMakeFiles\tiny_lus.dir\util.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jeza1\Desktop\tiny_plus\util.cpp > CMakeFiles\tiny_lus.dir\util.cpp.i
 
 CMakeFiles/tiny_lus.dir/util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tiny_lus.dir/util.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\TINY++\Tiny_Plus_Complier\util.cpp -o CMakeFiles\tiny_lus.dir\util.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jeza1\Desktop\tiny_plus\util.cpp -o CMakeFiles\tiny_lus.dir\util.cpp.s
 
 CMakeFiles/tiny_lus.dir/util.cpp.obj.requires:
 
@@ -130,16 +130,16 @@ CMakeFiles/tiny_lus.dir/util.cpp.obj.provides.build: CMakeFiles/tiny_lus.dir/uti
 
 CMakeFiles/tiny_lus.dir/parser.cpp.obj: CMakeFiles/tiny_lus.dir/flags.make
 CMakeFiles/tiny_lus.dir/parser.cpp.obj: ../parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\TINY++\Tiny_Plus_Complier\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tiny_lus.dir/parser.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\parser.cpp.obj -c G:\TINY++\Tiny_Plus_Complier\parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tiny_lus.dir/parser.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\parser.cpp.obj -c C:\Users\jeza1\Desktop\tiny_plus\parser.cpp
 
 CMakeFiles/tiny_lus.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tiny_lus.dir/parser.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\TINY++\Tiny_Plus_Complier\parser.cpp > CMakeFiles\tiny_lus.dir\parser.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jeza1\Desktop\tiny_plus\parser.cpp > CMakeFiles\tiny_lus.dir\parser.cpp.i
 
 CMakeFiles/tiny_lus.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tiny_lus.dir/parser.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\TINY++\Tiny_Plus_Complier\parser.cpp -o CMakeFiles\tiny_lus.dir\parser.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jeza1\Desktop\tiny_plus\parser.cpp -o CMakeFiles\tiny_lus.dir\parser.cpp.s
 
 CMakeFiles/tiny_lus.dir/parser.cpp.obj.requires:
 
@@ -152,12 +152,37 @@ CMakeFiles/tiny_lus.dir/parser.cpp.obj.provides: CMakeFiles/tiny_lus.dir/parser.
 CMakeFiles/tiny_lus.dir/parser.cpp.obj.provides.build: CMakeFiles/tiny_lus.dir/parser.cpp.obj
 
 
+CMakeFiles/tiny_lus.dir/cgen.cpp.obj: CMakeFiles/tiny_lus.dir/flags.make
+CMakeFiles/tiny_lus.dir/cgen.cpp.obj: ../cgen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tiny_lus.dir/cgen.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\tiny_lus.dir\cgen.cpp.obj -c C:\Users\jeza1\Desktop\tiny_plus\cgen.cpp
+
+CMakeFiles/tiny_lus.dir/cgen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tiny_lus.dir/cgen.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jeza1\Desktop\tiny_plus\cgen.cpp > CMakeFiles\tiny_lus.dir\cgen.cpp.i
+
+CMakeFiles/tiny_lus.dir/cgen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tiny_lus.dir/cgen.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jeza1\Desktop\tiny_plus\cgen.cpp -o CMakeFiles\tiny_lus.dir\cgen.cpp.s
+
+CMakeFiles/tiny_lus.dir/cgen.cpp.obj.requires:
+
+.PHONY : CMakeFiles/tiny_lus.dir/cgen.cpp.obj.requires
+
+CMakeFiles/tiny_lus.dir/cgen.cpp.obj.provides: CMakeFiles/tiny_lus.dir/cgen.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\tiny_lus.dir\build.make CMakeFiles/tiny_lus.dir/cgen.cpp.obj.provides.build
+.PHONY : CMakeFiles/tiny_lus.dir/cgen.cpp.obj.provides
+
+CMakeFiles/tiny_lus.dir/cgen.cpp.obj.provides.build: CMakeFiles/tiny_lus.dir/cgen.cpp.obj
+
+
 # Object files for target tiny_lus
 tiny_lus_OBJECTS = \
 "CMakeFiles/tiny_lus.dir/main.cpp.obj" \
 "CMakeFiles/tiny_lus.dir/scan2.cpp.obj" \
 "CMakeFiles/tiny_lus.dir/util.cpp.obj" \
-"CMakeFiles/tiny_lus.dir/parser.cpp.obj"
+"CMakeFiles/tiny_lus.dir/parser.cpp.obj" \
+"CMakeFiles/tiny_lus.dir/cgen.cpp.obj"
 
 # External object files for target tiny_lus
 tiny_lus_EXTERNAL_OBJECTS =
@@ -166,11 +191,12 @@ tiny_lus.exe: CMakeFiles/tiny_lus.dir/main.cpp.obj
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/scan2.cpp.obj
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/util.cpp.obj
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/parser.cpp.obj
+tiny_lus.exe: CMakeFiles/tiny_lus.dir/cgen.cpp.obj
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/build.make
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/linklibs.rsp
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/objects1.rsp
 tiny_lus.exe: CMakeFiles/tiny_lus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\TINY++\Tiny_Plus_Complier\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable tiny_lus.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable tiny_lus.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tiny_lus.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -182,6 +208,7 @@ CMakeFiles/tiny_lus.dir/requires: CMakeFiles/tiny_lus.dir/main.cpp.obj.requires
 CMakeFiles/tiny_lus.dir/requires: CMakeFiles/tiny_lus.dir/scan2.cpp.obj.requires
 CMakeFiles/tiny_lus.dir/requires: CMakeFiles/tiny_lus.dir/util.cpp.obj.requires
 CMakeFiles/tiny_lus.dir/requires: CMakeFiles/tiny_lus.dir/parser.cpp.obj.requires
+CMakeFiles/tiny_lus.dir/requires: CMakeFiles/tiny_lus.dir/cgen.cpp.obj.requires
 
 .PHONY : CMakeFiles/tiny_lus.dir/requires
 
@@ -190,6 +217,6 @@ CMakeFiles/tiny_lus.dir/clean:
 .PHONY : CMakeFiles/tiny_lus.dir/clean
 
 CMakeFiles/tiny_lus.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" G:\TINY++\Tiny_Plus_Complier G:\TINY++\Tiny_Plus_Complier G:\TINY++\Tiny_Plus_Complier\cmake-build-debug G:\TINY++\Tiny_Plus_Complier\cmake-build-debug G:\TINY++\Tiny_Plus_Complier\cmake-build-debug\CMakeFiles\tiny_lus.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\jeza1\Desktop\tiny_plus C:\Users\jeza1\Desktop\tiny_plus C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug C:\Users\jeza1\Desktop\tiny_plus\cmake-build-debug\CMakeFiles\tiny_lus.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tiny_lus.dir/depend
 
